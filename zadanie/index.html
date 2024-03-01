@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">Tygodniowy harmonogram pracy</div>
+
+
+    <div class="dropdownmenu">
+        
+    
+
+    <div class="sec-center"> 	
+        <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+        <label class="for-dropdown" for="dropdown">Sort <i class="uil uil-arrow-down"></i></label>
+        <div class="section-dropdown"> 
+            <a href="#">Sort by priority<i class="uil uil-arrow-right"></i></a>
+            <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
+            <label class="for-dropdown-sub" for="dropdown-sub">Date Sort <i class="uil uil-plus"></i></label>
+            <div class="section-dropdown-sub"> 
+                <a href="#">Sort ASC <i class="uil uil-arrow-right"></i></a>
+                <a href="#">Sort DESC  <i class="uil uil-arrow-right"></i></a>
+            </div>
+            <a href="#">Sort By name<i class="uil uil-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+      <div id="list">
+        
+      </div>
+
+<div class="addtask">
+    <time id="currentDateTime"></time>
+    <input type="date" name="datawykonania" id="datawykonania"> Wprowadz deadline wykonania     
+    <input type="text" id="title" placeholder="Wpisz tytuł">
+    <input type="number" name="priority" id="priority" placeholder="Wprowadź Stopien wazności od 1-5" max="5" min="1" > 
+    <input type="text" name="" id="" placeholder="Wpisz Imie" maxlength="50" cols="1" aria-rowspan="1">
+    <div class="centerForm">
+        <textarea cols="60" rows="8" maxlength="100" placeholder="Opis"></textarea> 
+    </div>
+        <input type="text" name="" id="" placeholder="Wpisz Imie" maxlength="50" cols="1" aria-rowspan="1">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function updateDateTime() {
+     const now = new Date();
+     const formattedDateTime = now.toLocaleString('en-US', {
+         year: 'numeric',
+         month: 'short',
+         day: 'numeric',
+         hour: '2-digit',
+         minute: '2-digit',
+         second: '2-digit'
+     });
+     document.getElementById('currentDateTime').textContent = formattedDateTime;
+ }
+
+
+updateDateTime();
+
+
+setInterval(updateDateTime, 10);
+</script>
+
+<script src="./script.js"></script>
